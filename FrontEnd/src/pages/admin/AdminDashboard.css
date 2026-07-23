@@ -389,14 +389,15 @@
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.03);
   border: 1px solid #F1F5F9;
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .admin-table {
   width: 100%;
   border-collapse: collapse;
 }
 .admin-table th {
-  padding: 18px 24px;
+  padding: 16px 20px;
   font-size: 12px;
   font-weight: 700;
   color: #64748B;
@@ -405,9 +406,10 @@
   letter-spacing: 0.5px;
   text-align: left;
   border-bottom: 1px solid #E2E8F0;
+  white-space: nowrap;
 }
 .admin-table td {
-  padding: 20px 24px;
+  padding: 16px 20px;
   font-size: 14px;
   color: #334155;
   border-bottom: 1px solid #F1F5F9;
@@ -415,6 +417,13 @@
 }
 .admin-table tbody tr:hover td {
   background: #F8FAFC;
+}
+
+.admin-action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 120px;
 }
 
 /* BADGES */
@@ -686,10 +695,8 @@
     grid-template-columns: 1fr;
   }
 
-  /* Tables wrapping */
+  /* Tables wrapping (already handled globally, but keeping width here for safety) */
   .admin-table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     width: 100%;
   }
 

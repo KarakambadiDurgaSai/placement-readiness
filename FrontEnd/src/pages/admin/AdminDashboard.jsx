@@ -524,7 +524,7 @@ export default function AdminDashboard() {
                               <span className={`admin-status-badge admin-status-${s.profileStatus}`}>{s.profileStatus}</span>
                             </td>
                             <td onClick={e => e.stopPropagation()}>
-                              <div style={{ display: "flex", gap: 8 }}>
+                              <div className="admin-action-buttons">
                                 <button className="admin-btn admin-btn-success" disabled={s.profileStatus === "verified" || processingId === s.id} onClick={() => verifyStudent(s.id)}>
                                   Verify
                                 </button>
@@ -612,7 +612,7 @@ export default function AdminDashboard() {
                               <span className={`admin-status-badge admin-status-${c.profileStatus}`}>{c.profileStatus}</span>
                             </td>
                             <td onClick={e => e.stopPropagation()}>
-                              <div style={{ display: "flex", gap: 8 }}>
+                              <div className="admin-action-buttons">
                                 <button className="admin-btn admin-btn-success" disabled={c.profileStatus === "verified" || processingId === c.id} onClick={() => verifyCompany(c.id)}>
                                   Verify
                                 </button>
