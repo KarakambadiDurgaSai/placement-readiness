@@ -1,0 +1,4 @@
+/* PlaceReady — Global Entry Point
+   All design tokens and base styles live in design-system.css.
+   Do not add styles here — use design-system.css or page-level CSS files. */
+@import './styles/design-system.css';

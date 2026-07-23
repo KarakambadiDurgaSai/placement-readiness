@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Login Test</title>
+</head>
+
+<body>
+
+    <h2>Admin Login</h2>
+
+    <input id="email" placeholder="Email"><br><br>
+    <input id="password" placeholder="Password" type="password"><br><br>
+
+    <button onclick="login()">Login</button>
+
+    <p id="result"></p>
+
+    <script>
+        async function login() {
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const res = await fetch("http://localhost:5000/api/admin/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            });
+
+            const data = await res.json();
+
+            document.getElementById("result").innerText = JSON.stringify(data);
+        }
+    </script>
+
+</body>
+
+</html>
